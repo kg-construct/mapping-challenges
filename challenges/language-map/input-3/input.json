@@ -1,0 +1,26 @@
+{
+    "persons": [
+        {
+            "firstname": "John",
+            "lastname": "Doe",
+            "num": 3,
+            "dt": "xsd:integer"
+        },
+        {
+            "firstname": "Jane",
+            "lastname": "Smith",
+            "num": "3.14",
+            "dt": "xsd:decimal"
+        }
+    ],
+    "languages": [
+        {
+            "firstname": "John",
+            "language": "en"
+        },
+        {
+            "firstname": "Jane",
+            "language": "fr"
+        }
+    ]
+}
