@@ -1,0 +1,67 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix csvw:  <http://www.w3.org/ns/csvw#> .
+
+<http://example.org/cell/D6>
+        <http://example.org/ontology/hasNormalText>
+                "uixqzL" ;
+        <http://example.org/ontology/hasStruckOutText>
+                "QOepVH" .
+
+<http://example.org/cell/D4>
+        <http://example.org/ontology/hasStruckOutText>
+                "eVmXvw" .
+
+<http://example.org/cell/D9>
+        <http://example.org/ontology/hasNormalText>
+                "ISHuxN" ;
+        <http://example.org/ontology/hasStruckOutText>
+                "ipUhHu" .
+
+<http://example.org/cell/D10>
+        <http://example.org/ontology/hasNormalText>
+                "tnOYxm" .
+
+<http://example.org/cell/D15>
+        <http://example.org/ontology/hasNormalText>
+                "chMjyn" .
+
+<http://example.org/cell/D7>
+        <http://example.org/ontology/hasNormalText>
+                "zGuudt" .
+
+<http://example.org/cell/D13>
+        <http://example.org/ontology/hasNormalText>
+                "ZiyGIR" .
+
+<http://example.org/cell/D18>
+        <http://example.org/ontology/hasStruckOutText>
+                "KdNQOd" .
+
+<http://example.org/cell/D5>
+        <http://example.org/ontology/hasNormalText>
+                "POjHws" ;
+        <http://example.org/ontology/hasStruckOutText>
+                "yIbSUx" .
+
+<http://example.org/cell/D16>
+        <http://example.org/ontology/hasNormalText>
+                "TnEBlV" ;
+        <http://example.org/ontology/hasStruckOutText>
+                "pLsxnv" .
+
+<http://example.org/cell/D8>
+        <http://example.org/ontology/hasNormalText>
+                "xvYtUA" .
+
+<http://example.org/cell/D14>
+        <http://example.org/ontology/hasStruckOutText>
+                "ImYQKb" .
+
+<http://example.org/cell/D19>
+        <http://example.org/ontology/hasNormalText>
+                "gOvpGG" .

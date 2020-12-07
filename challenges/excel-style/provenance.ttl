@@ -1,0 +1,165 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix csvw:  <http://www.w3.org/ns/csvw#> .
+
+<file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D14>
+        a       prov:Entity , csvw:Cell .
+
+[ a                    prov:Entity , rdf:Statement ;
+  rdf:object           "ipUhHu" ;
+  rdf:predicate        <http://example.org/ontology/hasStruckOutText> ;
+  rdf:subject          <http://example.org/cell/D9> ;
+  prov:wasDerivedFrom  <file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D9>
+] .
+
+<file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D4>
+        a       prov:Entity , csvw:Cell .
+
+<file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D19>
+        a       prov:Entity , csvw:Cell .
+
+[ a                    prov:Entity , rdf:Statement ;
+  rdf:object           "ZiyGIR" ;
+  rdf:predicate        <http://example.org/ontology/hasNormalText> ;
+  rdf:subject          <http://example.org/cell/D13> ;
+  prov:wasDerivedFrom  <file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D13>
+] .
+
+<file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D13>
+        a       prov:Entity , csvw:Cell .
+
+[ a                    prov:Entity , rdf:Statement ;
+  rdf:object           "gOvpGG" ;
+  rdf:predicate        <http://example.org/ontology/hasNormalText> ;
+  rdf:subject          <http://example.org/cell/D19> ;
+  prov:wasDerivedFrom  <file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D19>
+] .
+
+[ a                    prov:Entity , rdf:Statement ;
+  rdf:object           "chMjyn" ;
+  rdf:predicate        <http://example.org/ontology/hasNormalText> ;
+  rdf:subject          <http://example.org/cell/D15> ;
+  prov:wasDerivedFrom  <file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D15>
+] .
+
+[ a                    prov:Entity , rdf:Statement ;
+  rdf:object           "ImYQKb" ;
+  rdf:predicate        <http://example.org/ontology/hasStruckOutText> ;
+  rdf:subject          <http://example.org/cell/D14> ;
+  prov:wasDerivedFrom  <file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D14>
+] .
+
+[ a                    prov:Entity , rdf:Statement ;
+  rdf:object           "ISHuxN" ;
+  rdf:predicate        <http://example.org/ontology/hasNormalText> ;
+  rdf:subject          <http://example.org/cell/D9> ;
+  prov:wasDerivedFrom  <file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D9>
+] .
+
+<file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D9>
+        a       prov:Entity , csvw:Cell .
+
+[ a                    prov:Entity , rdf:Statement ;
+  rdf:object           "zGuudt" ;
+  rdf:predicate        <http://example.org/ontology/hasNormalText> ;
+  rdf:subject          <http://example.org/cell/D7> ;
+  prov:wasDerivedFrom  <file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D7>
+] .
+
+<file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D18>
+        a       prov:Entity , csvw:Cell .
+
+[ a                    prov:Entity , rdf:Statement ;
+  rdf:object           "pLsxnv" ;
+  rdf:predicate        <http://example.org/ontology/hasStruckOutText> ;
+  rdf:subject          <http://example.org/cell/D16> ;
+  prov:wasDerivedFrom  <file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D16>
+] .
+
+[ a                    prov:Entity , rdf:Statement ;
+  rdf:object           "eVmXvw" ;
+  rdf:predicate        <http://example.org/ontology/hasStruckOutText> ;
+  rdf:subject          <http://example.org/cell/D4> ;
+  prov:wasDerivedFrom  <file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D4>
+] .
+
+[ a                    prov:Entity , rdf:Statement ;
+  rdf:object           "QOepVH" ;
+  rdf:predicate        <http://example.org/ontology/hasStruckOutText> ;
+  rdf:subject          <http://example.org/cell/D6> ;
+  prov:wasDerivedFrom  <file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D6>
+] .
+
+<file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D8>
+        a       prov:Entity , csvw:Cell .
+
+[ a                    prov:Entity , rdf:Statement ;
+  rdf:object           "yIbSUx" ;
+  rdf:predicate        <http://example.org/ontology/hasStruckOutText> ;
+  rdf:subject          <http://example.org/cell/D5> ;
+  prov:wasDerivedFrom  <file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D5>
+] .
+
+[ a                    prov:Entity , rdf:Statement ;
+  rdf:object           "KdNQOd" ;
+  rdf:predicate        <http://example.org/ontology/hasStruckOutText> ;
+  rdf:subject          <http://example.org/cell/D18> ;
+  prov:wasDerivedFrom  <file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D18>
+] .
+
+<file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D7>
+        a       prov:Entity , csvw:Cell .
+
+<file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D16>
+        a       prov:Entity , csvw:Cell .
+
+[ a                    prov:Entity , rdf:Statement ;
+  rdf:object           "tnOYxm" ;
+  rdf:predicate        <http://example.org/ontology/hasNormalText> ;
+  rdf:subject          <http://example.org/cell/D10> ;
+  prov:wasDerivedFrom  <file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D10>
+] .
+
+<file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D10>
+        a       prov:Entity , csvw:Cell .
+
+[ a                    prov:Entity , rdf:Statement ;
+  rdf:object           "POjHws" ;
+  rdf:predicate        <http://example.org/ontology/hasNormalText> ;
+  rdf:subject          <http://example.org/cell/D5> ;
+  prov:wasDerivedFrom  <file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D5>
+] .
+
+<file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D6>
+        a       prov:Entity , csvw:Cell .
+
+<file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D15>
+        a       prov:Entity , csvw:Cell .
+
+<file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D5>
+        a       prov:Entity , csvw:Cell .
+
+[ a                    prov:Entity , rdf:Statement ;
+  rdf:object           "uixqzL" ;
+  rdf:predicate        <http://example.org/ontology/hasNormalText> ;
+  rdf:subject          <http://example.org/cell/D6> ;
+  prov:wasDerivedFrom  <file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D6>
+] .
+
+[ a                    prov:Entity , rdf:Statement ;
+  rdf:object           "xvYtUA" ;
+  rdf:predicate        <http://example.org/ontology/hasNormalText> ;
+  rdf:subject          <http://example.org/cell/D8> ;
+  prov:wasDerivedFrom  <file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D8>
+] .
+
+[ a                    prov:Entity , rdf:Statement ;
+  rdf:object           "TnEBlV" ;
+  rdf:predicate        <http://example.org/ontology/hasNormalText> ;
+  rdf:subject          <http://example.org/cell/D16> ;
+  prov:wasDerivedFrom  <file://input.xlsx?sheet=Excel%20Style%20Challenge&address=D16>
+] .
