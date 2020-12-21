@@ -1,0 +1,22 @@
+{
+    "author": [
+        {
+            "firstname": "John",
+            "affiliation": "Uni1"
+        },
+        {
+            "firstname": "Jane",
+            "affiliation": "Uni2"
+        }
+    ],
+    "people": [
+        {
+            "firstname": "John",
+            "familyName": "Doe"
+        },
+        {
+            "firstname": "Jane",
+            "familyName": "Dane"
+        }
+    ]
+}
