@@ -1,0 +1,18 @@
+{
+    "persons": [
+        {
+            "firstname": "John",
+            "lastname": "Doe",
+            "lang": "en",
+            "num": 3,
+            "dt": "http://www.w3.org/2001/XMLSchema#integer"
+        },
+        {
+            "firstname": "Jane",
+            "lastname": "Smith",
+            "lang": "fr",
+            "num": "3.14",
+            "dt": "http://www.w3.org/2001/XMLSchema#decimal"
+        }
+    ]
+}

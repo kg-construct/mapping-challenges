@@ -1,0 +1,4 @@
+@prefix ex: "http://example.com"
+
+ex:person/John ex:num "3"^^xsd:integer .
+ex:person/Jane ex:num "3.14"^^xsd:decimal .
