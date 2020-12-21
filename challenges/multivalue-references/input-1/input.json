@@ -1,0 +1,36 @@
+{
+    "labName": "AmazingLab1",
+    "articles": [
+        {
+            "title": "article1",
+            "authors": [
+                {
+                    "name": "Alice",
+                    "affiliation": [
+                        {"label": "Uni1"},
+                        {"label": "Company2"}
+                    ]
+                },
+                {
+                    "name": "Bob",
+                    "affiliation": [
+                        {"label": "Uni3"},
+                        {"label": "Company4"}
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "article2",
+            "authors": [
+                {
+                    "name": "Claire",
+                    "affiliation": [
+                        {"label": "Uni5"},
+                        {"label": "Company6"}
+                    ]
+                }
+            ]
+        }
+    ]
+}
