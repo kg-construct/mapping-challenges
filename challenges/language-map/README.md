@@ -13,7 +13,7 @@ where the language tag is derived from source data.
 - What if we want to derive, e.g., 'fr' from 'French'?
   - related to data transformations
 - What if the language tag is in another data source?
-  - related to joins
+  - related to joins, see <https://github.com/kg-construct/mapping-challenges/issues/23>
 
 ## Conclusions
 
