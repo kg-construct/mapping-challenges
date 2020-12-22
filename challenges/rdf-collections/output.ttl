@@ -1,0 +1,5 @@
+@prefix ex: "http://example.com"
+
+ex:lab/AmazingLab1 ex:hasArticle ex:article/article1 .
+
+ex:article/article1 ex:hasAuthor ( ex:author/Alice, ex:author/Bob ) .

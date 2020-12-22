@@ -1,0 +1,10 @@
+{
+    "labName": "AmazingLab1",
+    "article": {
+        "title": "article1",
+        "authors": {
+            "1": "Alice",
+            "2": "Bob"
+        }
+    }
+}
