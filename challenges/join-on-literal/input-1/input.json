@@ -1,10 +1,12 @@
 {
     "author": [
         {
+            "id": 1,
             "firstname": "John",
             "affiliation": "Uni1"
         },
         {
+            "id": 2,
             "firstname": "Jane",
             "affiliation": "Uni2"
         }
