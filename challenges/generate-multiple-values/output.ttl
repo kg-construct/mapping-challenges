@@ -1,0 +1,4 @@
+@prefix ex: "http://example.com"
+
+ex:person/John ex:name "John"@en, "John"@fr .
+

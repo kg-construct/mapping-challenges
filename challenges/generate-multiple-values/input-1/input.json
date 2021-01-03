@@ -1,0 +1,13 @@
+{
+    "lastname": "Doe",
+    "firstname": [
+        {
+            "label": "John",
+            "lang": "en"
+        },
+        {
+            "label": "John",
+            "lang": "fr"
+        }
+    ]
+}
