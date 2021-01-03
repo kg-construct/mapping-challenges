@@ -1,0 +1,28 @@
+{
+    "records": [
+        {
+            "id": "1",
+            "enteredBy": "Alice",
+            "cars": [
+                {
+                    "make": "Mercedes"
+                },
+                {
+                    "make": "Honda"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "enteredBy": "Bob",
+            "cars": [
+                {
+                    "make": "Mercedes"
+                },
+                {
+                    "make": "Toyota"
+                }
+            ]
+        }
+    ]
+}
