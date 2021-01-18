@@ -1,0 +1,17 @@
+@prefix ex: "http://example.com"
+
+ex:lab/AmazingLab1 ex:hasArticle ex:article/article1 .
+
+ex:article/article1 ex:hasAuthor ( ex:author/Alice, ex:author/Bob ) .
+ex:article/article1 ex:hasTags [
+    a rdf:Bag ;
+    rdf:_1 ex:tag1 ;
+    rdf:_2 ex:tag2 ;
+    rdf:_3 ex:tag3 ] .
+
+ex:tag1 ex:label "tag1" .
+ex:tag2 ex:label "tag2" .
+ex:tag3 ex:label "tag3" .
+
+ex:author/Alice ex:fullName "familyName1, Alice" .
+ex:author/Bob ex:fullName "familyName2, Bob" .
