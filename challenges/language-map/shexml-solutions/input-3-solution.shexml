@@ -1,0 +1,21 @@
+PREFIX ex: <http://example.com/>
+PREFIX exPerson: <http://example.com/person/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SOURCE input <https://raw.githubusercontent.com/kg-construct/mapping-challenges/main/challenges/language-map/input-3/input.json>
+ITERATOR persons <jsonpath: $.persons[*]> {
+    FIELD firstname <firstname>
+    FIELD lastname <lastname>
+    FIELD num <num>
+    FIELD dt <dt>
+}
+ITERATOR languages <jsonpath: $.languages[*]> {
+    FIELD firstname <firstname>
+    FIELD lang <language>
+}
+
+EXPRESSION person <input.persons>
+EXPRESSION langtag <input.languages.lang UNION input.persons.firstname JOIN input.languages.firstname>
+
+ex:Person exPerson:[person.firstname] {
+    ex:lastName [person.lastname] @[langtag] ;
+}

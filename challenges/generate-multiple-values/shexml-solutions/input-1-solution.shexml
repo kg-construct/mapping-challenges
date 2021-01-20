@@ -1,0 +1,16 @@
+PREFIX ex: <http://example.com/>
+PREFIX exPerson: <http://example.com/person/>
+SOURCE input <https://raw.githubusercontent.com/kg-construct/mapping-challenges/main/challenges/generate-multiple-values/input-1/input.json>
+ITERATOR persons <jsonpath: $> {
+  FIELD lastname <firstname[1].label>
+    ITERATOR firstname <firstname[*]> {
+        FIELD label <label>
+        FIELD lang <lang>
+    }
+}
+
+EXPRESSION person <input.persons>
+
+ex:Person exPerson:[person.lastname] {
+    ex:name [person.firstname.label] @[person.firstname.lang] ;
+}

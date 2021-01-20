@@ -1,0 +1,23 @@
+PREFIX ex: <http://example.com/>
+PREFIX exPerson: <http://example.com/person/>
+SOURCE input1 <https://raw.githubusercontent.com/kg-construct/mapping-challenges/main/challenges/access-fields-outside-iteration/input-1/input.json>
+ITERATOR records <jsonpath: $.records[*]> {
+    PUSHED_FIELD id <id>
+    FIELD enteredBy <enteredBy>
+    ITERATOR cars <cars[*]> {
+        FIELD make <make>
+    	POPPED_FIELD carOwner <id>
+    }
+}
+EXPRESSION record <input1.records>
+EXPRESSION personCar <input1.records.cars.carOwner + "/cars/" + input1.records.cars.make>
+
+ex:Person exPerson:[record.id] {
+  	a ex:Person ;
+    ex:hasCar @ex:Car ;
+}
+
+ex:Car exPerson:[personCar] {
+  	a ex:Car ;
+  	ex:owner exPerson:[record.cars.carOwner] ;
+}
