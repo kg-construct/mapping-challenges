@@ -9,10 +9,8 @@ ITERATOR persons <jsonpath: $.persons[*]> {
     FIELD num <num>
     FIELD dt <dt>
 }
-MATCHER datatypePrefix <"http://www.w3.org/2001/XMLSchema#integer" AS "xsd:integer" &
-                        "http://www.w3.org/2001/XMLSchema#decimal" AS "xsd:decimal">
 EXPRESSION person <input.persons>
 
 ex:Person exPerson:[person.firstname] {
-    ex:num [person.num] [person.dt MATCHING datatypePrefix] ;
+    ex:num [person.num] [person.dt] ;
 }
