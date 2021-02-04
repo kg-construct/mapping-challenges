@@ -13,6 +13,8 @@ Relevant discussion:
 - <https://github.com/RMLio/rml-implementation-report/issues/11#issuecomment-514961278>
 - <https://github.com/carml/carml/issues/52>
 - <https://ieeexplore.ieee.org/document/6882016>
+- <https://github.com/RMLio/rmlmapper-java/issues/93>
+    - which links to a temporary solution until RML can support this
 
 ## Extensions
 
