@@ -120,16 +120,16 @@
     <a href="rdf-collections/output.ttl">Expected output</a>
     <ul>
         <li>
-            <a href="rdf-collection/input-1/input.json">input 1</a>:
-            <a href="rdf-collection/shexml-solutions/input-1-solution.shexml">Mapping file</a> - 
+            <a href="rdf-collections/input-1/input.json">input 1</a>:
+            <a href="rdf-collections/shexml-solutions/input-1-solution.shexml">Mapping file</a> - 
             <a href="http://shexml.herminiogarcia.com/editor/?input=PREFIX%20ex%3A%20%3Chttp%3A%2F%2Fexample.com%2F%3E%0APREFIX%20exArticle%3A%20%3Chttp%3A%2F%2Fexample.com%2Farticle%2F%3E%0APREFIX%20exLab%3A%20%3Chttp%3A%2F%2Fexample.com%2Flab%2F%3E%0APREFIX%20exAuthor%3A%20%3Chttp%3A%2F%2Fexample.com%2Fperson%2F%3E%0APREFIX%20xsd%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX%20rdf%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0ASOURCE%20input%20%3Chttps%3A%2F%2Fraw.githubusercontent.com%2Fkg-construct%2Fmapping-challenges%2Fmain%2Fchallenges%2Frdf-collections%2Finput-1%2Finput.json%3E%0AITERATOR%20lab%20%3Cjsonpath%3A%20%24%3E%20%7B%0A%20%20%20%20FIELD%20labName%20%3ClabName%3E%0A%20%20%20%20ITERATOR%20articles%20%3Carticle%3E%20%7B%0A%20%20%20%20%20%20%20%20FIELD%20title%20%3Ctitle%3E%0A%20%20%20%20%20%20%20%20ITERATOR%20authors%20%3Cauthors%5B*%5D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20FIELD%20name%20%3Cname%3E%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%7D%0A%0AEXPRESSION%20labValues%20%3Cinput.lab%3E%0A%0Aex%3ALab%20exLab%3A%5BlabValues.labName%5D%20%7B%0A%20%20%20%20a%20ex%3ALab%20%3B%0A%20%20%20%20ex%3AhasArticles%20%40ex%3AArticle%20%3B%0A%7D%0A%0Aex%3AArticle%20exArticle%3A%5BlabValues.articles.title%5D%20%7B%0A%20%20%20%20a%20ex%3AArticle%20%3B%0A%20%20%20%20ex%3AhasAuthors%20exAuthor%3A%5BlabValues.articles.authors.name%20AS%20RDFList%5D%20%3B%0A%7D&result=%40prefix%20ex%3A%20%20%20%20%3Chttp%3A%2F%2Fexample.com%2F%3E%20.%0A%40prefix%20rdf%3A%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%20.%0A%40prefix%20xsd%3A%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%20.%0A%40prefix%20exAuthor%3A%20%3Chttp%3A%2F%2Fexample.com%2Fperson%2F%3E%20.%0A%40prefix%20exLab%3A%20%3Chttp%3A%2F%2Fexample.com%2Flab%2F%3E%20.%0A%40prefix%20exArticle%3A%20%3Chttp%3A%2F%2Fexample.com%2Farticle%2F%3E%20.%0A%0AexArticle%3Aarticle1%20%20a%20%20ex%3AArticle%20%3B%0A%20%20%20%20%20%20%20%20ex%3AhasAuthors%20%20(%20exAuthor%3AAlice%20exAuthor%3ABob%20)%20.%0A%0AexLab%3AAmazingLab1%20%20a%20%20%20%20ex%3ALab%20%3B%0A%20%20%20%20%20%20%20%20ex%3AhasArticles%20%20exArticle%3Aarticle1%20.%0A">Demo</a>
         </li>
         <li>
-            <a href="rdf-collection/input-2/input.json">input 2</a>:
+            <a href="rdf-collections/input-2/input.json">input 2</a>:
             Not working. Exploring a possible JSON Path query that solves the problem.
         </li>
         <li>
-            <a href="rdf-collection/input-3/input.json">input 3</a>:
+            <a href="rdf-collections/input-3/input.json">input 3</a>:
             Not working. ShExML iterates per row by default, so it is not possible with this iteration model to reach the expected output.
         </li>
     </ul>
