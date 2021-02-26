@@ -1,0 +1,60 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix ex: <http://example.com/>.
+@base <http://example.com/ns#>.
+
+<#LogicalSource> a rml:LogicalSource ;
+  rml:source "../input-1/input.json" ;
+  rml:referenceFormulation ql:JSONPath ;
+  rml:iterator "$"
+  rml:field [
+    rml:name "name" ;
+    rml:reference "$.labName" ] ;
+  rml:field [
+    rml:name "article" ;
+    rml:reference "$.articles.[*]" 
+    rml:field [
+      rml:name "title" ;
+      rml:reference "$.title" ] ;
+    rml:field [
+      rml:name "author" ;
+      rml:reference "$.authors.[*]" 
+      rml:field [
+        rml:name "name" ;
+        rml:reference "$.name" ] ;
+      rml:field [
+        rml:name "affiliation" ;
+        rml:reference "$.affiliation.[*].label" ] ;
+      ] ;
+    ] .
+
+<#Labs> a rr:TriplesMap ;
+  rml:logicalSource <#LogicalSource> ;   
+  rr:subjectMap [
+    rr:template "http://example.com/lab/{name}";
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ex:hasArticle ;
+    rr:objectMap [ rr:template "http://example.com/article/{article.title}" ] ;
+  ] .
+
+<#Articles> a rr:TriplesMap ;
+  rml:logicalSource <#LogicalSource> ;   
+  rr:subjectMap [
+    rr:template "http://example.com/article/{article.title}";
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ex:hasAuthor ;
+    rr:objectMap [ rr:template "http://example.com/author/{article.author.name}" ] ;
+  ] .
+
+<#Authors> a rr:TriplesMap ;
+  rml:logicalSource <#LogicalSource> ;   
+  rr:subjectMap [
+    rr:template "http://example.com/author/{article.author.name}";
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ex:hasAffiliation ;
+    rr:objectMap [ rr:template "http://example.com/aff/{article.author.affiliation}" ] ;
+  ] .

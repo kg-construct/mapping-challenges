@@ -1,0 +1,45 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix ex: <http://example.com/>.
+@base <http://example.com/ns#>.
+
+<#LogicalSource> a rml:LogicalSource ;
+  rml:source "../input-1/input.json" ;
+  rml:referenceFormulation ql:JSONPath ;
+  rml:iterator "$"
+  rml:field [
+    rml:name "name" ;
+    rml:reference "$.labName" ] ;
+  rml:field [
+    rml:name "article" ;
+    rml:reference "$.article" 
+    rml:field [
+      rml:name "title" ;
+      rml:reference "$.title" ] ;
+    rml:field [
+      rml:name "author" ;
+      rml:reference "$.authors.[*].name" ] ;
+    ] .
+
+<#Lab> a rr:TriplesMap ;
+  rml:logicalSource <#LogicalSource> ;   
+  rr:subjectMap [
+    rr:template "http://example.com/lab/{name}";
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ex:hasArticle ;
+    rr:objectMap [ rr:template "http://example.com/article/{article.title}" ] ;
+  ] .
+
+<#Article> a rr:TriplesMap ;
+  rml:logicalSource <#LogicalSource> ;   
+  rr:subjectMap [
+    rr:template "http://example.com/article/{article.title}";
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ex:hasAuthor ;
+    rr:termType xrr:RdfList ;
+# by default grouped by article field: first common ancestor of article.title (subject) and article.author (object)
+    xrr:nestedTermMap [ rr:template "http://example.com/author/{article.author}" ] ;
+  ].
