@@ -1,0 +1,9 @@
+@prefix ex: "http://example.com"
+
+ex:salt ex:label "salt" .
+ex:tomatoes ex:label "tomatoes" .
+ex:pepper ex:label "pepper" .
+ex:garlic ex:label "garlic" .
+
+ex:recipe1 ex:ingredients ex:garlic, ex:pepper .
+ex:recipe2 ex:ingredients ex:salt, ex:tomatoes .
