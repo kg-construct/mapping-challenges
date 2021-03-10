@@ -39,7 +39,9 @@
   ] ;
   rr:predicateObjectMap [
     rr:predicate ex:hasAuthor ;
-    rr:termType xrr:RdfList ;
-# by default grouped by article field: first common ancestor of article.title (subject) and article.author (object)
-    xrr:nestedTermMap [ rr:template "http://example.com/author/{article.author}" ] ;
-  ].
+    rr:objectMap [
+      rr:termType xrr:RdfList ;
+      # by default grouped by article field: first common ancestor of article.title (subject) and article.author (object)
+      xrr:nestedTermMap [ rr:template "http://example.com/author/{article.author}" ] ;
+    ] ;
+  ] .

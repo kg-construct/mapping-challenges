@@ -37,7 +37,10 @@
   rr:predicateObjectMap [
     rr:predicate ex:hasArticle ;
     rr:objectMap [ rr:template "http://example.com/article/{article.title}" ] ;
-  ] .
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ex:hasMember ;
+    rr:objectMap [ rr:template "http://example.com/author/{article.author.name}" ] .
 
 <#Articles> a rr:TriplesMap ;
   rml:logicalSource <#LogicalSource> ;   
