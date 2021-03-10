@@ -5,17 +5,19 @@ tags:
 
 # Iterating over an array of strings
 
-In hierarchical documents, it is currently not possible to iterate over a array of string values. The current mechanism requires to provide a key to retrieve values when iterating on an array, it is not possible to reference the value of the object we are iterating on (in our case a string)
+In hierarchical documents, it should be possible to iterate over arrays of string values using `@` to refer to the current node. 
+
+This should be standard and acknowledged in the RML specifications.
 
 ## Extensions
 
-* 
+* This acknowledged in the RML specifications and RML testing cases to make sure RML implementations are properly supporting JSONPath.
 
 ## Discussions
 
 - https://github.com/RMLio/rmlmapper-java/issues/95
 
-* It has been discussed to be able to reference the root of a relative JSONPath using `$` , but still keeping the existing mechanism when `$` is not provided. See this YARRRML mapping as example:
+* See this YARRRML mapping as example:
 
 ```yaml
 prefixes:
@@ -26,9 +28,9 @@ mappings:
   ingredients:
     sources:
       - ['ingredients.json~jsonpath', "$.[*].ingredients[*]"]
-    s: fo:ingredient/$($)
+    s: fo:ingredient/$(@)
     po:
-      - [rdfs:label, $($)]
+      - [rdfs:label, $(@)]
       
   recipes:
     sources:
