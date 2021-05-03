@@ -1,0 +1,62 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.com/> .
+
+@base <http://example.com/base/> .
+
+<Records_LS> a rml:LogicalSource ;
+  rml:source "../input-2/input.json" ;
+  rml:iterator "records.[*]" ;
+  rml:referenceFormulation ql:JSONPath ;
+.
+
+<Person> a rr:TriplesMap ;
+  rml:logicalSource <Records_LS> ;
+  rml:subjectMap [
+    rr:template "http://example.com/person/{id}" ;
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ex:hasCar ;
+    rr:objectMap [
+      rr:parentTriplesMap <Cars> ;
+      rr:joinCondition [
+        rr:child "enteredBy" ;
+        rr:parent "from" ;
+      ] ;
+    ] ;
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ex:hasFriend ;
+    rr:objectMap [
+      rr:parentTriplesMap <Cars> ;
+      rr:joinCondition [
+        rr:child "enteredBy" ;
+        rr:parent "from" ;
+      ] ;
+    ] ;
+  ] ;
+.
+
+<Cars> a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "../input-2/input.json" ;
+    rml:iterator "cars.[*]" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:merge [
+      rml:from <Records_LS> ;
+      rml:including [
+        rml:reference "id" ;
+        rml:as "record_id" ;
+      ] ;
+      rml:joinCondition [
+        rr:child "from" ;
+        rr:parent "enteredBy" ;
+      ] ;
+    ] ;
+  ] ;
+  rr:subjectMap [
+    rr:template "http://example.com/person/{record_id}/cars/{make}" ;
+  ] ;
+.

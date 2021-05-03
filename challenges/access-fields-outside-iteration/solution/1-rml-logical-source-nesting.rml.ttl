@@ -1,0 +1,44 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.com/> .
+
+@base <http://example.com/base/> .
+
+<Person_LS> a rml:LogicalSource ;
+  rml:source "../input-1/input.json" ;
+  rml:iterator "records.[*]" ;
+  rml:referenceFormulation ql:JSONPath ;
+.
+
+<Person> a rr:TriplesMap ;
+  rml:logicalSource <Person_LS> ;
+  rr:subjectMap [
+    rr:template "http://example.com/person/{id}" ;
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ex:hasCar ;
+    rr:objectMap [
+      rml:parentTriplesMap <Cars> ;
+    ] ;
+  ] ;
+.
+
+<Cars> a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "../input-1/input.json" ;
+    rml:iterator "cars.[*]" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:nested [
+      rml:inLogicalSource <Person_LS> ;
+      rml:includes [
+        rml:reference "id" ;
+        rml:as "record_id"
+      ] ;
+    ] ;
+  ] ;
+  rr:subjectMap [
+    rr:template "http://example.com/person/{record_id}/cars/{make}" ;
+  ] ;
+.
