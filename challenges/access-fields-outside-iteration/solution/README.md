@@ -78,10 +78,10 @@ Because many reference formulations do not support moving up a hierarchy in the 
 Indicating that a logical source is nested in another using a `rml:LogicalSourceNesting`, allows engines to optimize the execution of these triples maps, and allows for streaming execution of joins between hierarchically related triples maps.
 
 A `rml:Logicalsource` has
-* zero or more `rml:nestedIn` relationships to a `rml:LogicalSourceNesting`.
+* zero or more `rml:nested` relationships to a `rml:LogicalSourceNesting`.
 
 An `rml:LogicalSourceNesting` has
-* exaclty one `rml:logicalsource` relationship to the `rml:LogicalSource` in which it is nested.
+* exaclty one `rml:inLogicalsource` relationship to the `rml:LogicalSource` in which it is nested.
 
 ```
 _:nested-ls
