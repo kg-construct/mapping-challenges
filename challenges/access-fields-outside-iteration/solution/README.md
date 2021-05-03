@@ -94,7 +94,7 @@ _:nested-ls
 .
 ```
 
-Next to that, a `rml:LogicalSourceNesting` is also a `rdfs:subClassOf` `rml:Includer`, meaning that, just like merges, data from a higher iteration can be included in a nested logical source using includes. Because the data is nested, there is no need join conditions on `rml:LogicalSourceNesting`s.
+Next to that, a `rml:LogicalSourceNesting` is also a `rdfs:subClassOf` `rml:Includer`, meaning that, just like merges, data from a higher iteration can be included in a nested logical source using includes. Because the data is nested, there is no need for join conditions on `rml:LogicalSourceNesting`s.
 
 ```
 _:nested-ls
