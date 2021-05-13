@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>ShExML solutions for mapping challenges</h1>
-    <h2>Access fields outside iterators</h2>
+    <h2 id="access_fields_outside_iterators">Access fields outside iterators</h2>
     <a href="access-fields-outside-iteration/output.ttl">Expected output</a>
     <ul>
         <li>
@@ -20,7 +20,7 @@
             Not working. Join condition does not solve the problem.
         </li>
     </ul>
-    <h2>Datatype map</h2>
+    <h2 id="datatype_map">Datatype map</h2>
     <a href="datatype-map/output.ttl">Expected output</a>
     <ul>
         <li>
@@ -49,7 +49,7 @@
             <a href="http://shexml.herminiogarcia.com/editor/?input=PREFIX%20ex%3A%20%3Chttp%3A%2F%2Fexample.com%2F%3E%0APREFIX%20exPerson%3A%20%3Chttp%3A%2F%2Fexample.com%2Fperson%2F%3E%0APREFIX%20xsd%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0ASOURCE%20input%20%3Chttps%3A%2F%2Fraw.githubusercontent.com%2Fkg-construct%2Fmapping-challenges%2Fmain%2Fchallenges%2Fdatatype-map%2Finput-5%2Finput.json%3E%0AITERATOR%20persons%20%3Cjsonpath%3A%20%24.persons%5B*%5D%3E%20%7B%0A%20%20%20%20FIELD%20firstname%20%3Cfirstname%3E%0A%20%20%20%20FIELD%20lastname%20%3Clastname%3E%0A%20%20%20%20FIELD%20lang%20%3Clang%3E%0A%20%20%20%20FIELD%20num%20%3Cnum%3E%0A%7D%0A%0AEXPRESSION%20person%20%3Cinput.persons%3E%0A%0Aex%3APerson%20exPerson%3A%5Bperson.firstname%5D%20%7B%0A%20%20%20%20ex%3Anum%20%5Bperson.num%5D%20%3B%0A%7D&result=%40prefix%20ex%3A%20%20%20%20%3Chttp%3A%2F%2Fexample.com%2F%3E%20.%0A%40prefix%20exPerson%3A%20%3Chttp%3A%2F%2Fexample.com%2Fperson%2F%3E%20.%0A%40prefix%20xsd%3A%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%20.%0A%0AexPerson%3AJane%20%20ex%3Anum%20%203.14%20.%0A%0AexPerson%3AJohn%20%20ex%3Anum%20%203%20.%0A">Demo</a>
         </li>
     </ul>
-    <h2>Excel style</h2>
+    <h2 id="excel_style">Excel style</h2>
     <a href="excel-style/output.ttl">Expected output</a>
     <ul>
         <li>
@@ -57,7 +57,7 @@
             Not addressed. It will require to include an Excel processor.
         </li>
     </ul>
-    <h2>Generate multiple values</h2>
+    <h2 id="generate_multiple_values">Generate multiple values</h2>
     <a href="generate-multiple-values/output.ttl">Expected output</a>
     <ul>
         <li>
@@ -71,7 +71,7 @@
             <a href="http://shexml.herminiogarcia.com/editor/?input=PREFIX%20ex%3A%20%3Chttp%3A%2F%2Fexample.com%2F%3E%0APREFIX%20exPerson%3A%20%3Chttp%3A%2F%2Fexample.com%2Fperson%2F%3E%0ASOURCE%20input%20%3Chttps%3A%2F%2Fraw.githubusercontent.com%2Fkg-construct%2Fmapping-challenges%2Fmain%2Fchallenges%2Fgenerate-multiple-values%2Finput-2%2Finput.json%3E%0AITERATOR%20persons%20%3Cjsonpath%3A%20%24%3E%20%7B%0A%20%20%09FIELD%20firstname%20%3Cfirstname%3E%0A%20%20%09FIELD%20lastname%20%3Clastname%3E%0A%20%20%09FIELD%20lang%20%3Clang%3E%0A%7D%0A%0AEXPRESSION%20person%20%3Cinput.persons%3E%0A%0Aex%3APerson%20exPerson%3A%5Bperson.firstname%5D%20%7B%0A%20%20%20%20ex%3Aname%20%5Bperson.firstname%5D%20%40en%20%3B%0A%20%20%09ex%3Aname%20%5Bperson.firstname%5D%20%40%5Bperson.lang%5D%20%3B%0A%7D%0A&result=%40prefix%20ex%3A%20%20%20%20%3Chttp%3A%2F%2Fexample.com%2F%3E%20.%0A%40prefix%20exPerson%3A%20%3Chttp%3A%2F%2Fexample.com%2Fperson%2F%3E%20.%0A%0AexPerson%3AJohn%20%20ex%3Aname%20%20%22John%22%40fr%20%2C%20%22John%22%40en%20.%0A">Demo</a>
         </li>
     </ul>
-    <h2>Join on literal</h2>
+    <h2 id="join_on_literal">Join on literal</h2>
     <a href="join-on-literal/output.ttl">Expected output</a>
     <ul>
         <li>
@@ -80,7 +80,7 @@
             <a href="http://shexml.herminiogarcia.com/editor/?input=PREFIX%20%3A%20%3Chttp%3A%2F%2Fexample.com%2F%3E%0APREFIX%20experson%3A%20%3Chttp%3A%2F%2Fexample.com%2Fperson%2F%3E%0APREFIX%20dbr%3A%20%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0APREFIX%20schema%3A%20%3Chttp%3A%2F%2Fschema.org%2F%3E%0ASOURCE%20jsonfile%20%3Chttps%3A%2F%2Fraw.githubusercontent.com%2Fkg-construct%2Fmapping-challenges%2F2aac9680cd731fd647abd33d44a7f400e4278cf3%2Fchallenges%2Fjoin-on-literal%2Finput-1%2Finput.json%3E%0AITERATOR%20author%20%3Cjsonpath%3A%20%24.author%5B*%5D%3E%20%7B%0A%20%20%20%20FIELD%20id%20%3Cid%3E%0A%20%20%20%20FIELD%20firstname%20%3Cfirstname%3E%0A%20%20%20%20FIELD%20affiliation%20%3Caffiliation%3E%20%20%20%0A%7D%0AITERATOR%20people%20%3Cjsonpath%3A%20%24.people%5B*%5D%3E%20%7B%0A%20%20%09FIELD%20firstname%20%3Cfirstname%3E%0A%20%20%09FIELD%20familyname%20%3CfamilyName%3E%0A%7D%0AEXPRESSION%20authors%20%3Cjsonfile.author%20UNION%20jsonfile.people%3E%0AEXPRESSION%20familyName%20%3Cjsonfile.people.familyname%20UNION%20jsonfile.author.firstname%20JOIN%20jsonfile.people.firstname%3E%0A%0A%3AAuthor%20experson%3A%5Bauthors.id%5D%20%7B%0A%20%20%20%20%3Aaffiliation%20%5Bauthors.affiliation%5D%20%3B%0A%20%20%20%20%3AlastName%20%5BfamilyName%5D%20%3B%0A%7D&result=%40prefix%20%3A%20%20%20%20%20%20%3Chttp%3A%2F%2Fexample.com%2F%3E%20.%0A%40prefix%20schema%3A%20%3Chttp%3A%2F%2Fschema.org%2F%3E%20.%0A%40prefix%20dbr%3A%20%20%20%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%20.%0A%40prefix%20experson%3A%20%3Chttp%3A%2F%2Fexample.com%2Fperson%2F%3E%20.%0A%0Aexperson%3A2%20%20%3Aaffiliation%20%20%22Uni2%22%20%3B%0A%20%20%20%20%20%20%20%20%3AlastName%20%20%20%20%20%22Dane%22%20.%0A%0Aexperson%3A1%20%20%3Aaffiliation%20%20%22Uni1%22%20%3B%0A%20%20%20%20%20%20%20%20%3AlastName%20%20%20%20%20%22Doe%22%20.%0A">Demo</a>
         </li>
     </ul>
-    <h2>Language map</h2>
+    <h2 id="language_map">Language map</h2>
     <a href="language-map/output.ttl">Expected output</a>
     <ul>
         <li>
@@ -99,7 +99,7 @@
             <a href="http://shexml.herminiogarcia.com/editor/?input=PREFIX%20ex%3A%20%3Chttp%3A%2F%2Fexample.com%2F%3E%0APREFIX%20exPerson%3A%20%3Chttp%3A%2F%2Fexample.com%2Fperson%2F%3E%0APREFIX%20xsd%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0ASOURCE%20input%20%3Chttps%3A%2F%2Fraw.githubusercontent.com%2Fkg-construct%2Fmapping-challenges%2Fmain%2Fchallenges%2Flanguage-map%2Finput-3%2Finput.json%3E%0AITERATOR%20persons%20%3Cjsonpath%3A%20%24.persons%5B*%5D%3E%20%7B%0A%20%20%20%20FIELD%20firstname%20%3Cfirstname%3E%0A%20%20%20%20FIELD%20lastname%20%3Clastname%3E%0A%20%20%20%20FIELD%20num%20%3Cnum%3E%0A%20%20%20%20FIELD%20dt%20%3Cdt%3E%0A%7D%0AITERATOR%20languages%20%3Cjsonpath%3A%20%24.languages%5B*%5D%3E%20%7B%0A%20%20%20%20FIELD%20firstname%20%3Cfirstname%3E%0A%20%20%20%20FIELD%20lang%20%3Clanguage%3E%0A%7D%0A%0AEXPRESSION%20person%20%3Cinput.persons%3E%0AEXPRESSION%20langtag%20%3Cinput.languages.lang%20UNION%20input.persons.firstname%20JOIN%20input.languages.firstname%3E%0A%0Aex%3APerson%20exPerson%3A%5Bperson.firstname%5D%20%7B%0A%20%20%20%20ex%3AlastName%20%5Bperson.lastname%5D%20%40%5Blangtag%5D%20%3B%0A%7D%0A&result=%40prefix%20ex%3A%20%20%20%20%3Chttp%3A%2F%2Fexample.com%2F%3E%20.%0A%40prefix%20exPerson%3A%20%3Chttp%3A%2F%2Fexample.com%2Fperson%2F%3E%20.%0A%40prefix%20xsd%3A%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%20.%0A%0AexPerson%3AJane%20%20ex%3AlastName%20%20%22Smith%22%40fr%20.%0A%0AexPerson%3AJohn%20%20ex%3AlastName%20%20%22Doe%22%40en%20.%0A">Demo</a>
         </li>
     </ul>
-    <h2>Multivalue references</h2>
+    <h2 id="multivalue_references">Multivalue references</h2>
     <a href="multivalue-references/output.ttl">Expected output</a>
     <ul>
         <li>
@@ -108,7 +108,7 @@
             <a href="http://shexml.herminiogarcia.com/editor/?input=PREFIX%20ex%3A%20%3Chttp%3A%2F%2Fexample.com%2F%3E%0APREFIX%20exLab%3A%20%3Chttp%3A%2F%2Fexample.com%2Flab%2F%3E%0APREFIX%20exArticle%3A%20%3Chttp%3A%2F%2Fexample.com%2Farticle%2F%3E%0APREFIX%20exAuthor%3A%20%3Chttp%3A%2F%2Fexample.com%2Fauthor%2F%3E%0APREFIX%20exAff%3A%20%3Chttp%3A%2F%2Fexample.com%2Faff%2F%3E%0ASOURCE%20lab_file%20%3Chttps%3A%2F%2Fraw.githubusercontent.com%2Fkg-construct%2Fmapping-challenges%2Fmain%2Fchallenges%2Fmultivalue-references%2Finput-1%2Finput.json%3E%0AITERATOR%20lab%20%3Cjsonpath%3A%20%24%3E%20%7B%0A%20%20%20%20FIELD%20labName%20%3ClabName%3E%0A%20%20%20%20ITERATOR%20articles%20%3Carticles%5B*%5D%3E%20%7B%0A%20%20%20%20%20%20%20%20FIELD%20title%20%3Ctitle%3E%0A%20%20%20%20%20%20%20%20ITERATOR%20authors%20%3Cauthors%5B*%5D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20FIELD%20name%20%3Cname%3E%0A%20%20%20%20%20%20%20%20%20%20ITERATOR%20affiliation%20%3Caffiliation%5B*%5D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20FIELD%20label%20%3Clabel%3E%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%7D%0A%0AEXPRESSION%20labValues%20%3Clab_file.lab%3E%0A%0Aex%3ALab%20exLab%3A%5BlabValues.labName%5D%20%7B%0A%20%20%09a%20ex%3ALab%20%3B%0A%09ex%3AhasArticles%20%40ex%3AArticle%20%3B%0A%09ex%3AhasMembers%20%40ex%3AAuthor%20%3B%0A%7D%0A%0Aex%3AArticle%20exArticle%3A%5BlabValues.articles.title%5D%20%7B%0A%20%20%09ex%3AhasAuthor%20%40ex%3AAuthor%20%3B%0A%7D%0A%0Aex%3AAuthor%20exAuthor%3A%5BlabValues.articles.authors.name%5D%20%7B%0A%20%20%09ex%3AhasAffiliation%20exAff%3A%5BlabValues.articles.authors.affiliation.label%5D%20%3B%0A%7D&result=%40prefix%20ex%3A%20%20%20%20%3Chttp%3A%2F%2Fexample.com%2F%3E%20.%0A%40prefix%20exAff%3A%20%3Chttp%3A%2F%2Fexample.com%2Faff%2F%3E%20.%0A%40prefix%20exAuthor%3A%20%3Chttp%3A%2F%2Fexample.com%2Fauthor%2F%3E%20.%0A%40prefix%20exLab%3A%20%3Chttp%3A%2F%2Fexample.com%2Flab%2F%3E%20.%0A%40prefix%20exArticle%3A%20%3Chttp%3A%2F%2Fexample.com%2Farticle%2F%3E%20.%0A%0AexAuthor%3AClaire%20%20ex%3AhasAffiliation%20%20exAff%3ACompany6%20%2C%20exAff%3AUni5%20.%0A%0AexAuthor%3ABob%20%20ex%3AhasAffiliation%20%20exAff%3ACompany4%20%2C%20exAff%3AUni3%20.%0A%0AexArticle%3Aarticle2%20%20ex%3AhasAuthor%20%20exAuthor%3AClaire%20.%0A%0AexAuthor%3AAlice%20%20ex%3AhasAffiliation%20%20exAff%3ACompany2%20%2C%20exAff%3AUni1%20.%0A%0AexLab%3AAmazingLab1%20%20a%20%20%20%20ex%3ALab%20%3B%0A%20%20%20%20%20%20%20%20ex%3AhasArticles%20%20exArticle%3Aarticle2%20%2C%20exArticle%3Aarticle1%20%3B%0A%20%20%20%20%20%20%20%20ex%3AhasMembers%20%20%20exAuthor%3AClaire%20%2C%20exAuthor%3ABob%20%2C%20exAuthor%3AAlice%20.%0A%0AexArticle%3Aarticle1%20%20ex%3AhasAuthor%20%20exAuthor%3ABob%20%2C%20exAuthor%3AAlice%20.%0A">Demo</a>
         </li>
     </ul>
-    <h2>Process multivalue references</h2>
+    <h2 id="process_multivalue_references">Process multivalue references</h2>
     <a href="process-multivalue-reference/output.ttl">Expected output</a>
     <ul>
         <li>
@@ -116,7 +116,7 @@
             Not addressed. It will require some data transformation functions to be implemented in ShExML.
         </li>
     </ul>
-    <h2>RDF Collections</h2>
+    <h2 id="rdf_collections">RDF Collections</h2>
     <a href="rdf-collections/output.ttl">Expected output</a>
     <ul>
         <li>
