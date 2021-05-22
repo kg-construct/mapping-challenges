@@ -8,12 +8,12 @@
 
 <PersonMap> a rr:TriplesMap ;
   rml:logicalSource [
-    rml:source "../input-3/input.json" ;
+    rml:source "../../input-3/input.json" ;
     rml:referenceFormulation ql:JSONPath ;
     rml:iterator "persons.[*]" ;
     rml:merge [
       rml:fromLogicalSource [
-        rml:source "../input-3/input.json" ;
+        rml:source "../../input-3/input.json" ;
         rml:referenceFormulation ql:JSONPath ;
         rml:iterator "languages.[*]" ;
       ] ;

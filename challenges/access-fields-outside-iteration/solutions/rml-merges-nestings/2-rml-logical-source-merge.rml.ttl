@@ -7,7 +7,7 @@
 @base <http://example.com/base/> .
 
 <Records_LS> a rml:LogicalSource ;
-  rml:source "../input-2/input.json" ;
+  rml:source "../../input-2/input.json" ;
   rml:iterator "records.[*]" ;
   rml:referenceFormulation ql:JSONPath ;
 .
@@ -41,7 +41,7 @@
 
 <Cars> a rr:TriplesMap ;
   rml:logicalSource [
-    rml:source "../input-2/input.json" ;
+    rml:source "../../input-2/input.json" ;
     rml:iterator "cars.[*]" ;
     rml:referenceFormulation ql:JSONPath ;
     rml:merge [
