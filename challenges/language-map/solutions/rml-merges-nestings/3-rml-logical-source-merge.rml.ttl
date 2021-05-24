@@ -1,0 +1,42 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.com/> .
+
+@base <http://example.com/base/> .
+
+<PersonMap> a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "../../input-3/input.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "persons.[*]" ;
+    rml:merge [
+      rml:fromLogicalSource [
+        rml:source "../../input-3/input.json" ;
+        rml:referenceFormulation ql:JSONPath ;
+        rml:iterator "languages.[*]" ;
+      ] ;
+      rml:joinCondition [
+        rr:child "firstname" ;
+        rr:parent "firstname" ;
+      ] ;
+      rml:including [
+        rml:reference "language" ;
+        rml:as "language" ;
+      ] ;
+    ] ;
+  ] ;
+  rr:subjectMap [
+    rr:template "http://example.com/person/{firstname}" ;
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ex:lastName ;
+    rr:objectMap [
+      rml:reference "lastname" ;
+      rml:languageMap [
+        rml:reference "language" ;
+      ] ;
+    ] ;
+  ] ;
+.
