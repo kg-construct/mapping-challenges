@@ -1,0 +1,28 @@
+PREFIX ex: <http://example.com/>
+PREFIX exArticle: <http://example.com/article/>
+PREFIX exLab: <http://example.com/lab/>
+PREFIX exAuthor: <http://example.com/person/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SOURCE input <https://raw.githubusercontent.com/kg-construct/mapping-challenges/main/challenges/rdf-collections/input-1/input.json>
+ITERATOR lab <jsonpath: $> {
+    FIELD labName <labName>
+    ITERATOR articles <article> {
+        FIELD title <title>
+        ITERATOR authors <authors[*]> {
+            FIELD name <name>
+        }
+    }
+}
+
+EXPRESSION labValues <input.lab>
+
+ex:Lab exLab:[labValues.labName] {
+    a ex:Lab ;
+    ex:hasArticles @ex:Article ;
+}
+
+ex:Article exArticle:[labValues.articles.title] {
+    a ex:Article ;
+    ex:hasAuthors exAuthor:[labValues.articles.authors.name AS RDFList] ;
+}
