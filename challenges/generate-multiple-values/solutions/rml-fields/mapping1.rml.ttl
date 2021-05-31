@@ -1,0 +1,34 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix ex: <http://example.com/>.
+@base <http://example.com/ns#>.
+
+<#TransportMapping> a rr:TriplesMap ;
+  rml:logicalSource [
+    rml:source "../input-1/input.json" ;
+    rml:referenceFormulation ql:JSONPath ;
+    rml:iterator "$"
+    rml:field [
+      rml:name "lastname" ;
+      rml:reference "$.lastname" ] ;
+    rml:field [
+      rml:name "firstname" ;
+      rml:reference "$.firstname.[*]" ] ;
+      rml:field [
+        rml:name "label" ;
+        rml:reference "$.label" ] ;
+      rml:field [
+        rml:name "lang" ;
+        rml:reference "$.lang" ] ;
+    ] ;
+  ] ; 
+  rr:subjectMap [
+    rr:template "http://example.com/person/{firstname.label}";
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ex:name ;
+    rr:objectMap [ 
+      rr:reference "firstname.label" ;
+      rr:languageMap "firstname.lang" ] ;
+  ] .
