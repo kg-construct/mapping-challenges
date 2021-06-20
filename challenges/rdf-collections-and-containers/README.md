@@ -3,9 +3,9 @@ tags:
   - multivalue
 ---
 
-# RDF Collections
+# RDF Collections and Containers
 
-The possibility to create an RDF collection such as rdf:List, rdf:Bag, etc.
+The possibility to create RDF collections (i.e., rdf:List) and RDF containers (i.e., rdf:Bag, rdf:Seq, and rdf:Alt).
 
 > Please see process-multivalue-reference, which is related
 
