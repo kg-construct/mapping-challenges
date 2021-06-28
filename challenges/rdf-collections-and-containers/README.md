@@ -1,22 +1,29 @@
----
-tags:
-  - multivalue
----
+# 1-collecting-values-from-the-same-term-map
+Is the standard case of putting values of the same term map in a collection or container.
 
-# RDF Collections and Containers
+# 2-collecting-values-from-different-term-maps
 
-The possibility to create RDF collections (i.e., rdf:List) and RDF containers (i.e., rdf:Bag, rdf:Seq, and rdf:Alt).
+Provides examples of collecting values from different term maps into a collection or container. Term maps can thus generate terms of different term types, data types, etc. 
 
-> Please see process-multivalue-reference, which is related
+There are two sub-cases:
 
-## Extensions
+* collecting the values from different term maps (simple)
+* collecting values from a reference object maps
 
-- What if data is originally not in a collection-like format?
-  - Is this related to, e.g. using a JSON object? See `input-2`
-  - What if the collection needs to be created across iterations? See `input-3`
+# 2b-collecting-values-from-different-termmaps-with-multi-valued-term-maps
 
-## Discussion
+# 3-processing-empty-collections-and-containers
 
--
+Provides cases in which no object map yields results for a collection and container; instructing the processor to generate an empty list or container or return nothing.
 
-## Conclusions
+# 4-nested-collections-and-containers
+
+Provides cases in which collections and containers are nested.
+
+# 5-collections-and-containers-as-subjects
+
+Provides cases in which collections and containers are the subject of a triple.
+
+# 6-identifying-collections-and-containers
+
+How to provide an IRI for RDF collections and containers. To be discussed.
